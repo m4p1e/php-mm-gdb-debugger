@@ -1,4 +1,4 @@
-It's a simple GDB script for debugging and analyzing the layout of php heap memory.
+It's a simple GDB script for debugging and analyzing the layout of php heap memory, hope u enjoy it :)
 
 Supported commands:
 
