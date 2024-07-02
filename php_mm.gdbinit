@@ -156,3 +156,13 @@ define print_mm_main_chunk_info
 		set $current_page_offset = $start_num + $pi
 	end	
 end
+
+
+define print_freelist_with_bin_num
+	set $bin_num = $arg0
+	set $mm_heap = (zend_mm_heap *)alloc_globals.mm_heap
+
+	set $free_slot = (zend_mm_free_slot *)$mm_heap->free_slot[$bin_num]
+	while $free_slot != (zend_mm_free_slot *)0
+		printf "%p\n", $free_slot
+		set $free_slot = $free_slot->next_free_slot
